@@ -11,6 +11,10 @@
     force: false
     checksum: "sha256:{{checksum_sha256}}"
 
+- name: Download only? (debug)
+  meta: end_play
+  when: download_only
+
 - name: Extract Android Studio
   ansible.builtin.unarchive:
     src: "{{ download_dir }}/android-studio-{{ android_studio_version }}.tar.gz"
