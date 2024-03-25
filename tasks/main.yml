@@ -1,41 +1,9 @@
 ---
+- name: pre
+  include_tasks: pre.yml
+
 # from: https://chat.openai.com/c/e6d3e415-b6c0-4aba-8bd8-09e7cbb101b2
 # and https://developer.android.com/studio/index.html
 
-- name: Ensure unzip is installed
-  apt:
-    name: unzip
-    state: present
-
-- name: Download Android Studio
-  get_url:
-    url: "{{ android_studio_download_url }}"
-    dest: "/tmp/android-studio-{{ android_studio_version }}.tar.gz"
-
-- name: Extract Android Studio
-  ansible.builtin.unarchive:
-    src: "/tmp/android-studio-{{ android_studio_version }}.tar.gz"
-    dest: "{{ android_studio_install_dir }}"
-    remote_src: yes
-    creates: "{{ android_studio_install_dir }}/bin/studio.sh"
-
-- name: Create a symbolic link to start Android Studio
-  ansible.builtin.file:
-    src: "{{ android_studio_install_dir }}/bin/studio.sh"
-    dest: "/usr/local/bin/android-studio"
-    state: link
-
-- name: Set permissions for Android Studio
-  ansible.builtin.file:
-    path: "{{ android_studio_install_dir }}"
-    mode: "0755"
-    recurse: yes
-    state: directory
-
-- name: Add Android Studio to the system path
-  lineinfile:
-    dest: "~/.bashrc"
-    line: 'export PATH="$PATH:{{ android_studio_install_dir }}/bin"'
-    state: present
-  become: yes
-  become_user: "{{ ansible_user }}"
+- name: from ChatGPT
+  include_tasks: from AI.yml
