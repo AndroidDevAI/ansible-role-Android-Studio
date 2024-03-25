@@ -1,4 +1,4 @@
 ---
 # defaults file for Android-Studio
 
-download_only: true
+download_only: false #true
