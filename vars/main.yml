@@ -9,3 +9,6 @@ android_studio_install_dir: "/opt/android-studio"
 # pre
 download_dir: /opt/download
 checksum_sha256: "0026427572849c9cbb0c94d6f9718ea08bc345dccfe3b372b54100a95fff99b5"
+
+# post
+desktop_file_name: Android-Studio.desktop

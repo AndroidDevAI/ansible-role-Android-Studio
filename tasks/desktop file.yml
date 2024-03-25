@@ -1,0 +1,9 @@
+---
+- name: Template Android-Studio.desktop file
+  ansible.builtin.template:
+    src: "{{ desktop_file_name }}.j2"
+    dest: "/usr/share/applications/{{ desktop_file_name }}"
+    owner: root
+    group: root
+    mode: '0644'
+  become: true

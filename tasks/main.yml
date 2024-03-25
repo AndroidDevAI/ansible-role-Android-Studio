@@ -7,3 +7,6 @@
 
 - name: from ChatGPT
   include_tasks: from AI.yml
+
+- name: Desktop.file
+  include_tasks: desktop file.yml
