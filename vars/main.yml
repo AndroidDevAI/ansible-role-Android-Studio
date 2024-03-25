@@ -1,0 +1,7 @@
+---
+# Android Studio Iguana
+# url from: https://github.com/snapcrafters/android-studio/blob/candidate/snap/snapcraft.yaml
+
+android_studio_version: "2023.2.1.24"
+android_studio_download_url: "https://redirector.gvt1.com/edgedl/android/studio/ide-zips/{{ android_studio_version }}/android-studio-{{ android_studio_version }}-linux.tar.gz"
+android_studio_install_dir: "/opt/android-studio"
